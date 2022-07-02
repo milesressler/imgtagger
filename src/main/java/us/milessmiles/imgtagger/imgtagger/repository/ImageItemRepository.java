@@ -5,8 +5,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import us.milessmiles.imgtagger.imgtagger.model.ImageItem;
 
-public interface ImageItemRepository extends MongoRepository<ImageItem, String> {
+import java.util.List;
+import java.util.Optional;
 
-    @Query("{name: '?0'}")
-    ImageItem findImageItemByName(String name);
+public interface ImageItemRepository extends MongoRepository<ImageItem, Long> {
+
+    List<ImageItem> findByTagsTag(String tag);
+    List<ImageItem> findByTagsTagAndTagsConfidenceGreaterThan(String tag, Float confidence);
 }
