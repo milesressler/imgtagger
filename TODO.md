@@ -1,0 +1,6 @@
+- JavaDoc
+- Exceptions - full coverage
+- logging
+- Test coverage
+- confidence filter not working
+- Stretch goal - SPA react for demo

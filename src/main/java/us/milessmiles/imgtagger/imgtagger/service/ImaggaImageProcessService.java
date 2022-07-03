@@ -7,13 +7,10 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import us.milessmiles.imgtagger.imgtagger.exceptions.ErrorCode;
 import us.milessmiles.imgtagger.imgtagger.exceptions.ServiceUnavailableException;
-import us.milessmiles.imgtagger.imgtagger.imagga.model.ImaggaTag;
 import us.milessmiles.imgtagger.imgtagger.imagga.model.ImaggaTagResponse;
-import us.milessmiles.imgtagger.imgtagger.model.ImageItem;
 import us.milessmiles.imgtagger.imgtagger.model.ImageItemTag;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class ImaggaImageProcessService implements ImageProcessingService {
@@ -29,7 +26,7 @@ public class ImaggaImageProcessService implements ImageProcessingService {
      */
     @Override
     public List<ImageItemTag> getTags(String imageUrl) {
-        ImaggaTagResponse response = webClient.get()
+        final ImaggaTagResponse response = webClient.get()
             .uri(uriBuilder -> uriBuilder
                     .path(TAG_URL)
                     .queryParam("image_url", imageUrl)

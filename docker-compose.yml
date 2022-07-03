@@ -13,4 +13,18 @@ services:
       - '27017:27017'
     volumes:
       - mongo:/data/db
-    image: mongo:latest
+    image:
+      mongo:latest
+
+  imgtagger:
+    environment:
+      SPRING_DATA_MONGODB_HOST: mongo
+      SPRING_DATA_MONGODB_PORT: 27017
+    ports:
+      - '9090:8080'
+    image:
+      imgtagger:latest
+    build:
+      context: .
+
+

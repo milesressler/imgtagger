@@ -34,7 +34,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 @Configuration
 public class ImaggaConfiguration {
@@ -50,7 +49,6 @@ public class ImaggaConfiguration {
 
     @Bean
     public WebClient imaggaWebClient() {
-
         return WebClient.builder()
             .baseUrl(imaggaUrl)
             .defaultHeaders(header -> header.setBasicAuth(imaggaApiKey, imaggaApiSecret))

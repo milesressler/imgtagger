@@ -1,7 +1,5 @@
 package us.milessmiles.imgtagger.imgtagger.exceptions;
 
-import com.fasterxml.jackson.databind.JsonSerializable;
-
 import java.io.Serializable;
 
 public class ExceptionResponse {

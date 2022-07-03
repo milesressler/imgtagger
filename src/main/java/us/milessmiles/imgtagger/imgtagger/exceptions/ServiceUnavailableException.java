@@ -1,6 +1,5 @@
 package us.milessmiles.imgtagger.imgtagger.exceptions;
 
-import com.fasterxml.jackson.databind.JsonSerializable;
 import org.springframework.http.HttpStatus;
 
 import java.io.Serializable;
