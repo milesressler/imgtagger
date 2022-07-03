@@ -80,3 +80,4 @@ src/main/resources/application-local.properties
 .env
 /build
 .idea
+.gradle
